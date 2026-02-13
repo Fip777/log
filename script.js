@@ -1,4 +1,4 @@
-const steps = {
+st steps = { 
 
     /* ===================== Q1 ===================== */
     q1: { type: "question", text: "Question 1", yes: "q2", no: "q3" },
@@ -104,9 +104,11 @@ const restartContainer = document.getElementById("restart-container");
 
 let currentStep = "q1";
 
-// Affiche les suggestions d'une proposition
+/* ===================== AFFICHAGE SUGGESTIONS ===================== */
 function showSuggestions(suggestions) {
     app.innerHTML = "";
+    restartContainer.innerHTML = "";
+
     const card = document.createElement("div");
     card.className = "card";
 
@@ -120,8 +122,11 @@ function showSuggestions(suggestions) {
         li.textContent = s;
         ul.appendChild(li);
     });
-    card.appendChild(ul);
 
+    card.appendChild(ul);
+    app.appendChild(card);
+
+    // 🔹 Restart EN DEHORS de la carte (comme les autres cas)
     const restart = document.createElement("button");
     restart.textContent = "Recommencer";
     restart.className = "restart";
@@ -129,13 +134,14 @@ function showSuggestions(suggestions) {
         currentStep = "q1";
         render();
     };
-    card.appendChild(restart);
 
-    app.appendChild(card);
+    restartContainer.appendChild(restart);
+
     instruction.style.display = "none";
 }
 
-// Affichage des questions / conclusions
+
+/* ===================== RENDER PRINCIPAL ===================== */
 function render() {
     app.innerHTML = "";
     restartContainer.innerHTML = "";
@@ -151,7 +157,7 @@ function render() {
 
     let hasChoices = false;
 
-    // ===== Questions Oui/Non =====
+    /* ===== QUESTIONS ===== */
     if (step.type === "question") {
         hasChoices = true;
 
@@ -179,7 +185,7 @@ function render() {
         card.appendChild(buttons);
     }
 
-    // ===== Conclusion avec propositions =====
+    /* ===== CONCLUSION AVEC PROPOSITIONS ===== */
     if (step.type === "conclusion" && step.proposals) {
         hasChoices = true;
 
@@ -193,10 +199,11 @@ function render() {
             btn.onclick = () => showSuggestions(step.proposals[key]);
             buttons.appendChild(btn);
         });
+
         card.appendChild(buttons);
     }
 
-    // ===== Conclusion avec suggestions directes =====
+    /* ===== CONCLUSION AVEC SUGGESTIONS DIRECTES ===== */
     if (step.type === "conclusion" && step.suggestions) {
         const ul = document.createElement("ul");
         step.suggestions.forEach(s => {
@@ -210,7 +217,7 @@ function render() {
     instruction.style.display = hasChoices ? "block" : "none";
     app.appendChild(card);
 
-    // ===== Bouton Recommencer =====
+    /* ===== RESTART EN DESSOUS SI PAS DE CHOIX ===== */
     if (!hasChoices) {
         const restart = document.createElement("button");
         restart.textContent = "Recommencer";
@@ -223,6 +230,5 @@ function render() {
     }
 }
 
-// Lancement initial
+/* ===================== LANCEMENT ===================== */
 render();
-
