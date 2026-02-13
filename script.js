@@ -1,4 +1,4 @@
-st steps = { 
+const steps = { 
 
     /* ===================== Q1 ===================== */
     q1: { type: "question", text: "Question 1", yes: "q2", no: "q3" },
@@ -232,3 +232,4 @@ function render() {
 
 /* ===================== LANCEMENT ===================== */
 render();
+
