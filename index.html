@@ -2,20 +2,27 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    
+    <!-- IMPORTANT pour le responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Logigramme interactif</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1 id="instruction" style="display: none;">
-        Choisissez une réponse
-    </h1>
+    <div class="page">
 
-    <div id="app"></div>
+        <h1 id="instruction" style="display: none;">
+            Choisissez une réponse
+        </h1>
 
-    <div id="restart-container"></div>
+        <div id="app"></div>
+
+        <div id="restart-container"></div>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
