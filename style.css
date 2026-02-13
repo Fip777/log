@@ -4,11 +4,20 @@
     margin: 0;
     padding: 0;
 }
+
 /* BODY CENTRÉ VERTICALEMENT */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
+
+/* Conteneur pleine hauteur */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+	padding: 20px;
+	}
 
 /* Conteneur pleine hauteur */
 .page {
@@ -23,7 +32,7 @@ body {
 
 /* TITRE */
 h1 {
-    margin-bottom: 30px;
+    margin-bottom: 50px; /* espace entre titre et carte */
     font-size: clamp(18px, 5vw, 26px);
 }
 
@@ -32,7 +41,7 @@ h1 {
     background: white;
     border-radius: 20px;
     padding: 25px;
-    width: 100%;
+	width: 100%;
     max-width: 500px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     animation: fadeIn 0.3s ease;
@@ -42,6 +51,7 @@ h1 {
 .card h2,
 .card p {
     font-size: clamp(16px, 4.5vw, 20px);
+	text-align: center;
 }
 
 /* BOUTONS OUI / NON */
@@ -85,17 +95,23 @@ button.no {
 
 /* PROPOSITIONS (empilées verticalement) */
 button.proposal {
-    background: white;
-    color: black;
-    border: 2px solid black;
+    background: #e8f0ff;           /* bleu très pâle */
+    color: #0d2a5c;                /* texte bleu foncé */
+    border: 0px solid #0d2a5c;     /* épaisseur contour bleu foncé */
     width: 100%;
     margin-top: 12px;
+    font-weight: 500;
 }
+
+button.proposal:hover {
+    background: #d6e4ff;
+}
+
 
 /* LISTE SUGGESTIONS */
 ul {
     list-style: none;
-    padding-left: 0;
+	padding-left: 0;
     margin-top: 20px;
     text-align: left;
 }
@@ -114,8 +130,10 @@ ul li::before {
 
 /* RESTART */
 #restart-container {
-    margin-top: 25px;
-}
+    width: 100%;
+    justify-content: center;  /* centre horizontalement */
+    margin-top: 50px; /* espace entre carte et bouton */
+	}
 
 button.restart {
     background: #333;
