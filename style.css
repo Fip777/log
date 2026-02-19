@@ -4,29 +4,28 @@
     margin: 0;
     padding: 0;
 }
-
 /* BARRE HAUT DE PAGE */
 
 .top-bar {
     display: flex;                 /* aligne les éléments horizontalement */
     align-items: center;           /* centre verticalement */
     justify-content: center;       /* centre horizontalement le contenu */
-    padding: 20px 40px;            /* espace haut/bas et gauche/droite */
-    gap: 20px;                     /* espace entre lignes et texte */
+    padding: 20px 30px;            /* espace haut/bas et gauche/droite */
+    gap: 10px;                     /* espace entre lignes et texte */
 }
 
 /* Lignes gauche et droite */
 .top-bar .line {
     flex: 1;                       
-    height: 2px;                   /* épaisseur de la ligne */
+    height: 1px;                   /* épaisseur de la ligne */
     background-color: #0d2a5c;     /* couleur du trait */
 }
 
 /* Lien central */
 .top-link {
-    text-decoration: none;         /* enlève le soulignement */
-    color: #0d2a5c;                /* couleur du texte */
-    font-weight: bold;             
+    text-decoration: none;         /* enlève soulignement */
+    color: #0d2a5c;                /* couleur texte */
+    font-weight: standard;         /* texte non gras */    
     white-space: nowrap;           /* empêche retour à la ligne */
     transition: 0.3s;
 }
@@ -40,26 +39,20 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-}
-
-/* Conteneur pleine hauteur */
-.page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-	padding: 20px;
 	}
 
+
 /* Conteneur pleine hauteur */
 .page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* centrage vertical */
-    align-items: center;       /* centrage horizontal */
     padding: 20px;
-    text-align: center;
-}
+	justify-content: center;   /* centrage vertical */
+    align-items: center;       /* centrage horizontal */
+	padding-bottom: 10vh; /* 10% de la hauteur écran */
+    }
+
 
 /* TITRE */
 h1 {
@@ -100,7 +93,7 @@ button {
     font-size: clamp(14px, 4vw, 18px);
     border-radius: 30px;
     cursor: pointer;
-    border: 2px solid black;
+    border: 2px solid #0d2a5c;
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     transition: transform 0.1s ease, box-shadow 0.1s ease;
     min-width: 120px;
@@ -115,12 +108,12 @@ button:active {
 /* OUI */
 button.yes {
     background: white;
-    color: black;
+    color: #0d2a5c;
 }
 
 /* NON */
 button.no {
-    background: black;
+    background: #0d2a5c;
     color: white;
 }
 
@@ -141,7 +134,7 @@ button.proposal:hover {
 
 /* LISTE SUGGESTIONS */
 ul {
-    list-style: none;
+	list-style: none;
 	padding-left: 0;
     margin-top: 20px;
     text-align: left;
@@ -162,12 +155,13 @@ ul li::before {
 /* RESTART */
 #restart-container {
     width: 100%;
+	display: flex;
     justify-content: center;  /* centre horizontalement */
     margin-top: 50px; /* espace entre carte et bouton */
 	}
 
 button.restart {
-    background: #333;
+    background: #0d2a5c;
     color: white;
     border: none;
 }
@@ -188,4 +182,3 @@ button.restart {
         padding: 12px 20px;
     }
 }
-
