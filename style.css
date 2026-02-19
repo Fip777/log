@@ -5,6 +5,37 @@
     padding: 0;
 }
 
+/* BARRE HAUT DE PAGE */
+
+.top-bar {
+    display: flex;                 /* aligne les éléments horizontalement */
+    align-items: center;           /* centre verticalement */
+    justify-content: center;       /* centre horizontalement le contenu */
+    padding: 20px 40px;            /* espace haut/bas et gauche/droite */
+    gap: 20px;                     /* espace entre lignes et texte */
+}
+
+/* Lignes gauche et droite */
+.top-bar .line {
+    flex: 1;                       
+    height: 2px;                   /* épaisseur de la ligne */
+    background-color: #0d2a5c;     /* couleur du trait */
+}
+
+/* Lien central */
+.top-link {
+    text-decoration: none;         /* enlève le soulignement */
+    color: #0d2a5c;                /* couleur du texte */
+    font-weight: bold;             
+    white-space: nowrap;           /* empêche retour à la ligne */
+    transition: 0.3s;
+}
+
+/* Effet au survol */
+.top-link:hover {
+    color: #0077cc;                /* couleur au survol */
+}
+
 /* BODY CENTRÉ VERTICALEMENT */
 body {
     font-family: Arial, sans-serif;
@@ -157,3 +188,4 @@ button.restart {
         padding: 12px 20px;
     }
 }
+
